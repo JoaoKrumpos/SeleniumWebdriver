@@ -23,7 +23,8 @@ public class Commands extends RunCucumber {
     public static void clickElement(By element) {
         try {
             System.out.println("Vai clicar no elemento " + element);
-            waitElementBeClickable(element, 10000);
+            waitElementBeClickable(element, 1);
+            waitElementBeVisible(element,1);
             getDriver().findElement(element).click();
             System.out.println("clicou no elemento" + element);
 
@@ -41,7 +42,7 @@ public class Commands extends RunCucumber {
     public static void fillField(By element, String value) {
         try {
             System.out.println("Vai preencher o campo  " + element);
-            waitElementBeVisible(element, 10000);
+            waitElementBeVisible(element, 1);
             getDriver().findElement(element).sendKeys(value);
             System.out.println("clicou no elemento" + element);
 
@@ -59,12 +60,12 @@ public class Commands extends RunCucumber {
         String actualMessage = "";
 
 
-        waitElementBeVisible(element, 10000);
+        waitElementBeVisible(element, 1);
         actualMessage = getDriver().findElement(element).getText();
         Assert.assertEquals(expectedmessage, actualMessage);
 
 
-        System.out.println("Aconteceu algum erro ao validar a mensagem");
+
         System.out.println("mensagem esperada" + expectedmessage);
         System.out.println("mensagem atual" + actualMessage);
 
