@@ -16,6 +16,7 @@ public class LoginPage extends RunCucumber {
     private By campoSenha = By.id("password");
     private By botaoFazerLogin = By.id("btnLogin");
     private By botaoAcessarCadastro = By.cssSelector(".right_list_fix > li > a > .fa-lock");
+    private By descertela = By.id("materialUnchecked");
 
     // ações / funções / métodos
     public void acessarAplicao() {
@@ -36,7 +37,7 @@ public class LoginPage extends RunCucumber {
 
     public void clicarLogin() {
 
-        Utils.scroll(botaoFazerLogin);
+        Utils.scroll(descertela);
         clickElement(botaoFazerLogin);
 
     }
